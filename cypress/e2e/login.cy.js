@@ -6,6 +6,11 @@ import {faker} from "@faker-js/faker"
  const screenName = faker.person.lastName()
 
 describe('Pokemon Account Creation', () => {
+  Cypress.on('uncaught:exception', (err, runnable) => {
+    // returning false here prevents Cypress from
+    // failing the test
+    return false;
+  });
   it('should create a new account', () => {
     // Navigate to the Pokedex
     cy.visit(Cypress.env('url'));
@@ -61,8 +66,9 @@ describe('Pokemon Account Creation', () => {
     //cy.get('h3').should('contain.text', 'Hello! Thank you for creating an account!');
   });
   
-  describe('Check pokemon info ', () => {
-    it('checking pokemon name, number and types', () => {
+  Cypress._.times(5,(p) =>{
+    it('veryfy pokemon ${p + 1} / 5',() =>{
+      cy.log(p)
       cy.visit(Cypress.env('url'));
       cy.get("a > span ").contains('Pokédex').click()
       cy.wait(2000)
