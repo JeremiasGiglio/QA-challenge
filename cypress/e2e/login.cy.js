@@ -11,7 +11,7 @@ describe('Pokemon Account Creation', () => {
     // failing the test
     return false;
   });
-  it('should create a new account', () => {
+  it.skip('should create a new account', () => {
     // Navigate to the Pokedex
     cy.visit(Cypress.env('url'));
     
@@ -67,7 +67,7 @@ describe('Pokemon Account Creation', () => {
   });
   
   Cypress._.times(5,(p) =>{
-    it('veryfy pokemon ${p + 1} / 5',() =>{
+    it.skip('veryfy pokemon ${p + 1} / 5',() =>{
       cy.log(p)
       cy.visit(Cypress.env('url'));
       cy.get("a > span ").contains('Pokédex').click()

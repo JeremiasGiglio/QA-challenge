@@ -5,8 +5,7 @@
   "description": "Qa challenge using cypress,github actions and allure ",
   "main": "index.js",
   "scripts": {
-    "test": "cypress open",
-    "cypress:spec-run": "cypress run --browser chrome --spec api.cy.js"
+    "test": "cypress open"
   
   },
   "keywords": [
