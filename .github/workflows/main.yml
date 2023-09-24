@@ -21,5 +21,4 @@ jobs:
           headless: true
           browser: electron
           command: npx cypress run --config-file cypress.config.js
-        env:
-          DEBUG: cypress:*
+        
