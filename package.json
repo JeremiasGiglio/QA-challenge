@@ -1,27 +1,54 @@
 {
   
   "name": "qa-challenge",
+  
   "version": "1.0.0",
+  
   "description": "Qa challenge using cypress,github actions and allure ",
+  
   "main": "index.js",
+  
   "scripts": {
-    "test": "cypress open"
+  
+  "html-report": "cypress run --spec cypress/e2e/api.cy.js --browser chrome --headed"  ,
+  "test": "cypress open"
   
   },
+  
   "keywords": [
-    "testing"
+  
+    
+  "testing"
+  
   ],
+  
   "author": "Jeremias Giglio",
+  
   "license": "ISC",
+  
   "dependencies": {
-    "cypress": "^10.0.0",
-    "faker": "^6.6.6"
+  
+    
+  "cypress": "^10.0.0",
+  
+    
+  "faker": "^6.6.6"
+  
   },
   
   "devDependencies": {
-    "@cypress/xpath": "^2.0.3",
-    "@faker-js/faker": "^8.1.0",
-    "cypress-xpath": "^2.0.1"
+  
     
+  "@cypress/xpath": "^2.0.3",
+  
+    
+  "@faker-js/faker": "^8.1.0",
+  
+    
+  "cypress-mochawesome-reporter": "^3.6.0",
+  
+    
+  "cypress-xpath": "^2.0.1"
+  
   }
 }
