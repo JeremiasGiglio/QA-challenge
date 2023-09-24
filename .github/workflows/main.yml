@@ -1,12 +1,19 @@
-name: Cypress Pokemon Test 
+name: Cypress Pokemon Test
 on: [push]
 jobs:
-    cypress-run:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout
-          uses: actions/checkout@v4.1.0
-        - name: Cypress.io 
-          uses: cypress-io/github-action@fd50b628255d62107377b511f928e6ebec975179
-          with:
-            start: npm start
+  cypress-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2 # Actualizado a v2
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '14' # o la versión que prefieras
+      
+      - name: Install Dependencies
+        run: npm install
+      
+      - name: Cypress.io
+        uses: cypress-io/github-action@v2 # Considera usar una versión etiquetada o v2
