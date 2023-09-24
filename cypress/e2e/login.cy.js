@@ -14,7 +14,7 @@ describe('Pokemon Account Creation', () => {
     cy.get('span > .sign-in-text-wrapper').click();
     
     // Click on the create account button
-    cy.get('#user-account-signup').click();
+    cy.get('#user-account-signup',{ timeout: 10000 }).click();
     
     // Fill out the form
     // Click on the date of birth input to open the date picker
