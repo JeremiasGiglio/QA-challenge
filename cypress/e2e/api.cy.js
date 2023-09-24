@@ -75,7 +75,7 @@ describe('Pokemon API', () => {
     cy.request({
       method: 'GET',
       url: 'https://pokeapi.co/api/v2/ability/nonexistent-ability',
-      failOnStatusCode: false // This is important to not fail the test on a non-2xx status code
+      failOnStatusCode: false //This is important to not fail the test on a non-2xx status code
     }).then((response) => {
       expect(response.status).to.eq(404);
     });
