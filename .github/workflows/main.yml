@@ -18,7 +18,6 @@ jobs:
       - name: Cypress.io
         uses: cypress-io/github-action@v2
         with:
-          headless: true
           browser: electron
           command: npx cypress run --config-file cypress.config.js
         
