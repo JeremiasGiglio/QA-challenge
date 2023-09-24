@@ -17,3 +17,5 @@ jobs:
       
       - name: Cypress.io
         uses: cypress-io/github-action@v2
+        with:
+          command: npx cypress run --config-file cypress.config.js
