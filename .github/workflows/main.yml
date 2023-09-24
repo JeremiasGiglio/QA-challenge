@@ -10,7 +10,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '14'
+          node-version: '16'
       
       - name: Install Dependencies
         run: npm install
@@ -18,4 +18,8 @@ jobs:
       - name: Cypress.io
         uses: cypress-io/github-action@v2
         with:
+          headless: true
+          browser: electron
           command: npx cypress run --config-file cypress.config.js
+        env:
+          DEBUG: cypress:*
