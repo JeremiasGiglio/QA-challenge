@@ -6,7 +6,7 @@ import {faker} from "@faker-js/faker"
  const screenName = faker.person.lastName()
 
 describe('Pokemon Account Creation', () => {
-  it.skip('should create a new account', () => {
+  it('should create a new account', () => {
     // Navigate to the Pokedex
     cy.visit(Cypress.env('url'));
     
@@ -62,6 +62,9 @@ describe('Pokemon Account Creation', () => {
   });
   
   Cypress._.times(5,(p) =>{
+    beforeEach(() =>{
+      cy.contains('Reject All').if('visible').click()
+    })
     it('veryfy pokemon ${p + 1} / 5',() =>{
       cy.log(p)
       cy.visit(Cypress.env('url'));
