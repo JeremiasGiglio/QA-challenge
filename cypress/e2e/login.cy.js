@@ -63,7 +63,15 @@ describe('Pokemon Account Creation', () => {
   
   Cypress._.times(5,(p) =>{
     beforeEach(() =>{
-      cy.contains('Reject All').if('visible').click()
+      cy.get("body").then($body => {
+        if ($body.find('button[id="onetrust-reject-all-handler"]').length > 0) {   
+            cy.get('button[id="onetrust-reject-all-handler"]').then($header => {
+              if ($header.is(':visible')){
+                cy.get('button[id="onetrust-reject-all-handler"]').click()
+              } 
+            });
+        } 
+    });
     })
     it('veryfy pokemon ${p + 1} / 5',() =>{
       cy.log(p)
