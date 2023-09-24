@@ -5,15 +5,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2 # Actualizado a v2
+        uses: actions/checkout@v2
       
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '14' # o la versión que prefieras
+          node-version: '14'
       
       - name: Install Dependencies
         run: npm install
       
       - name: Cypress.io
-        uses: cypress-io/github-action@v2 # Considera usar una versión etiquetada o v2
+        uses: cypress-io/github-action@v2
