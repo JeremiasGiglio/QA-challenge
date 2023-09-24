@@ -61,9 +61,8 @@ describe('Pokemon Account Creation', () => {
     //cy.get('h3').should('contain.text', 'Hello! Thank you for creating an account!');
   });
   
-  Cypress._.times(5, function(p) {
-    it('verify pokemon ' + (p + 1) + ' / 5', function() {
-      cy.log(p)
+  describe('Check pokemon info ', () => {
+    it('checking pokemon name, number and types', () => {
       cy.visit(Cypress.env('url'));
       cy.get("a > span ").contains('Pokédex').click()
       cy.wait(2000)
