@@ -18,7 +18,7 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
-          command: npm run html-report
+          config-file: cypress.config.js
       
       - name: Uploading artifact
         uses: actions/upload-artifact@v2
@@ -27,6 +27,7 @@ jobs:
           name: cypress-execution-report
           path: cypress/reports/html
           retention-days: 30
+
       #- name: Cypress.io
       #  uses: cypress-io/github-action@v2
       #  with:
