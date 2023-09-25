@@ -18,7 +18,7 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
-          config-file: cypress.config.js
+          config-file: cypress/cypress.config.js
       
       - name: Uploading artifact
         uses: actions/upload-artifact@v2
